@@ -1,4 +1,4 @@
-def call(String state, Map args) {
+def call(String state, String creds, Map args) {
   script {
     sh "curl -d " +
        "'{\"state\": \"${state}\"," +
@@ -6,7 +6,7 @@ def call(String state, Map args) {
        "\"name\": \"${args.name}\"," +
        "\"url\": \"${args.buildUrl}\"," +
        "\"description\": \"${args.description}\"}' " +
-       "--user ${args.creds} " +
+       "--user ${creds} " +
        "-H \"Content-Type: application/json\" " +
        "-X POST ${args.repoUrl}"
   }
