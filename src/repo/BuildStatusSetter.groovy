@@ -1,4 +1,6 @@
-def call(String state, String creds, Map args) {
+package repo;
+
+def setBuildStatusInBitbucket(String state, String, creds, Map args) {
   script {
     sh "curl -d " +
        "'{\"state\": \"${state}\"," +
@@ -11,3 +13,5 @@ def call(String state, String creds, Map args) {
        "-X POST ${args.repoUrl}"
   }
 }
+
+return this
