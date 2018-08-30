@@ -1,7 +1,6 @@
 def call(String creds, Map args) {
   script {
-    def repo = new repo.BuildStatusSetter()
-    repo.setBuildStatusInBitbucket(
+    library('pipeline-library-helpers').repo.BuildStatusSetter.setBuildStatusInBitbucket(
       "FAILED",
       creds,
       args
