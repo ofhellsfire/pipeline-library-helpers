@@ -9,6 +9,5 @@ def call(String creds, Map args) {
        "--user ${creds} " +
        "-H \"Content-Type: application/json\" " +
        "-X POST ${args.repoUrl}"
-    )
   }
 }
